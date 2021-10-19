@@ -66,7 +66,7 @@ Servo = GPIO.PWM(Y_Servo_pin, 50)
 
 Servo.start(0)                     
 
-#角度からデューティ比を求める関数
+
 def X_servo_angle(X_angle):
     duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
