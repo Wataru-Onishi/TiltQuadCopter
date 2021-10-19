@@ -5,7 +5,7 @@ import smbus
 import math
 
 
-##################################################
+########################################################
 #MPU6050の設定と関数
 DEV_ADDR = 0x68
 
@@ -84,10 +84,11 @@ def Y_servo_angle(Y_angle):
 def main():
     while True:
         try:
-            X_servo_angle(30)
-            Y_servo_angle(30)
-            X_servo_angle(60)
-            Y_servo_angle(60)
+            ax, ay, az = getAccel()
+            gx, gy, gz = getGyro()
+            roll = math.atan(ay/az) * 57.324
+            pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
+            print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
         except KeyboardInterrupt:          
             Servo.stop()                
