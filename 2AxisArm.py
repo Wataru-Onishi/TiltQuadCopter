@@ -67,8 +67,13 @@ Servo = GPIO.PWM(Y_Servo_pin, 50)
 Servo.start(0)                     
 
 #角度からデューティ比を求める関数
-def servo_angle(angle):
-    duty = 2.5 + (12.0 - 2.5) * (angle + 90) / 180   
+def X_servo_angle(X_angle):
+    duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
+    Servo.ChangeDutyCycle(duty)     
+    time.sleep(2)     
+
+def Y_servo_angle(Y_angle):
+    duty = 2.5 + (12.0 - 2.5) * (Y_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
     time.sleep(2)     
 
@@ -79,8 +84,10 @@ def servo_angle(angle):
 def main():
     while True:
         try:
-            servo_angle(30)
-            servo_angle(60)  
+            X_servo_angle(30)
+            Y_servo_angle(30)
+            X_servo_angle(60)
+            Y_servo_angle(60)
 
         except KeyboardInterrupt:          
             Servo.stop()                
