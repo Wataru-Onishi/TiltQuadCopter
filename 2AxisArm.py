@@ -91,6 +91,7 @@ def main():
             roll = 0 # math.atan(ay/az) * 57.324
             pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
             print('{:4.3f}, {:4.3f},' .format(pitch, roll))
+            time.sleep(0.5)
 
         except KeyboardInterrupt:          
             Servo.stop()                
