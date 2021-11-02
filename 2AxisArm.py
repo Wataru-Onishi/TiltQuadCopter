@@ -23,7 +23,6 @@ PWR_MGMT_1 = 0x6b
 PWR_MGMT_2 = 0x6c  
 
 bus = smbus.SMBus(1)
-time.sleep(1)
 bus.write_byte_data(DEV_ADDR, PWR_MGMT_1, 0)
 
 def read_word(adr):
@@ -89,7 +88,7 @@ def main():
         try:
             ax, ay, az = getAccel()
             gx, gy, gz = getGyro()
-            roll = math.atan(ay/az) * 57.324
+            roll = 0 # math.atan(ay/az) * 57.324
             pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
             print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
