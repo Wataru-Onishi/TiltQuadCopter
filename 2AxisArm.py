@@ -23,6 +23,7 @@ PWR_MGMT_1 = 0x6b
 PWR_MGMT_2 = 0x6c  
 
 bus = smbus.SMBus(1)
+time.sleep(1)
 bus.write_byte_data(DEV_ADDR, PWR_MGMT_1, 0)
 
 def read_word(adr):
