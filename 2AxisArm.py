@@ -88,7 +88,7 @@ def main():
         try:
             ax, ay, az = getAccel()
             gx, gy, gz = getGyro()
-            roll = 0 # math.atan(ay/az) * 57.324
+            roll =  math.atan(ay/az) * 57.324
             pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
             print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
