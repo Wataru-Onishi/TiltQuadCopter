@@ -86,14 +86,14 @@ def Y_servo_angle(Y_angle):
 def main():
     while True:
         try:
-            ax, ay, az = getAccel()
-            gx, gy, gz = getGyro()
-            roll =  math.atan(ay/az) * 57.324
-            pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
-            print('{:4.3f}, {:4.3f},' .format(pitch, roll))
+            # ax, ay, az = getAccel()
+            # gx, gy, gz = getGyro()
+            # roll =  math.atan(ay/az) * 57.324
+            # pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
+            # print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
-            X_servo_angle(roll)
-            Y_servo_angle(pitch)
+            X_servo_angle(90)
+            Y_servo_angle(90)
 
         except KeyboardInterrupt:          
             Servo.stop()                
