@@ -53,8 +53,8 @@ def getAccel():
 ########################################################
 #サーボモータの設定と関数
 #ポート番号の定義
-X_Servo_pin = 16                      
-Y_Servo_pin = 18                     
+X_Servo_pin = 23                      
+Y_Servo_pin = 24                     
 
 #GPIOの設定
 GPIO.setmode(GPIO.BCM)              
@@ -86,17 +86,15 @@ def Y_servo_angle(Y_angle):
 def main():
     while True:
         try:
-            # ax, ay, az = getAccel()
-            # gx, gy, gz = getGyro()
-            # roll =  math.atan(ay/az) * 57.324
-            # pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
-            # print('{:4.3f}, {:4.3f},' .format(pitch, roll))
+            ax, ay, az = getAccel()
+            gx, gy, gz = getGyro()
+            roll =  math.atan(ay/az) * 57.324
+            pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
+            print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
-            X_servo_angle(90)
-            Y_servo_angle(90)
-            time.sleep(2)
-            X_servo_angle(0)
-            Y_servo_angle(0)
+            X_servo_angle(roll)
+            Y_servo_angle(pitch)
+
 
         except KeyboardInterrupt:          
             Servo.stop()                
