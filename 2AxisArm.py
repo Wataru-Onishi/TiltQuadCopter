@@ -90,7 +90,7 @@ def main():
             # gx, gy, gz = getGyro()
             roll =  math.atan(ay/az) * 57.324
             pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
-            print('{:4.3f},' .format(ay))
+            print('{:4.3f},{:4.3f},{:4.3f}' .format(ax,ay,az))
             # print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
             # X_servo_angle(round(roll))
