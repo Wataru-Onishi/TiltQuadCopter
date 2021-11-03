@@ -88,8 +88,8 @@ def main():
         try:
             ax, ay, az = getAccel()
 
-            roll = -math.asin(az/math.sqrt((az**2)+(ay**2))) * 57.324
-            pitch = -math.asin(az/math.sqrt((az**2)+(ax**2))) * 57.324
+            roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
+            pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
 
             # gx, gy, gz = getGyro()
             # roll =  math.atan(ay/az) * 57.324
