@@ -94,6 +94,9 @@ def main():
 
             X_servo_angle(90)
             Y_servo_angle(90)
+            time.sleep(2)
+            X_servo_angle(0)
+            Y_servo_angle(0)
 
         except KeyboardInterrupt:          
             Servo.stop()                
