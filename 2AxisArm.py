@@ -87,13 +87,13 @@ def main():
     while True:
         try:
             ax, ay, az = getAccel()
-            gx, gy, gz = getGyro()
+            # gx, gy, gz = getGyro()
             roll =  math.atan(ay/az) * 57.324
             pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
             print('{:4.3f}, {:4.3f},' .format(pitch, roll))
 
-            X_servo_angle(round(roll))
-            Y_servo_angle(round(pitch))
+            # X_servo_angle(round(roll))
+            # Y_servo_angle(round(pitch))
 
 
         except KeyboardInterrupt:          
