@@ -94,9 +94,10 @@ def main():
             r_pitch = round(pitch)
 
             X_servo_angle(r_roll)
+            
 
 
-            print('{:4.3f}, {:4.3f},' .format(roll, pitch))
+            print('{:4.3f}, {:4.3f},' .format(r_roll, r_pitch))
 
 
 
