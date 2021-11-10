@@ -90,11 +90,11 @@ def main():
 
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
-            r_roll = round(roll)
-            r_pitch = round(pitch)
+            r_roll = round(roll,-1)
+            r_pitch = round(pitch,-1)
 
             X_servo_angle(r_roll)
-            
+
 
 
             print('{:4.3f}, {:4.3f},' .format(r_roll, r_pitch))
