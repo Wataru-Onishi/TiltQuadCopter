@@ -72,12 +72,12 @@ Servo.start(0)
 def X_servo_angle(X_angle):
     duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
-    time.sleep(0.3)     
+    # time.sleep(0.3)     
 
 def Y_servo_angle(Y_angle):
     duty = 2.5 + (12.0 - 2.5) * (Y_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
-    time.sleep(0.3)     
+    # time.sleep(0.3)     
 
 
 
