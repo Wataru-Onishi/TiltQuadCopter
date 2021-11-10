@@ -72,12 +72,12 @@ Servo.start(0)
 def X_servo_angle(X_angle):
     duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
-    # time.sleep(0.3)     
+  
 
 def Y_servo_angle(Y_angle):
     duty = 2.5 + (12.0 - 2.5) * (Y_angle + 90) / 180   
     Servo.ChangeDutyCycle(duty)     
-    # time.sleep(0.3)     
+
 
 
 
@@ -90,15 +90,10 @@ def main():
 
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
-            r_roll = round(roll,-1)
-            r_pitch = round(pitch,-1)
 
-            X_servo_angle(r_roll)
+            X_servo_angle(roll)
 
-
-
-            print('{:4.3f}, {:4.3f},' .format(r_roll, r_pitch))
-
+            print('{:4.3f}, {:4.3f},' .format(roll, pitch))
 
 
         except KeyboardInterrupt:          
