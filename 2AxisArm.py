@@ -91,14 +91,11 @@ def main():
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
 
-            # gx, gy, gz = getGyro()
-            # roll =  math.atan(ay/az) * 57.324
-            # pitch = math.atan(-ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
-            # print('{:4.3f},{:4.3f},{:4.3f}' .format(ax,ay,az))
+            X_servo_angle(roll)
+
+
             print('{:4.3f}, {:4.3f},' .format(roll, pitch))
 
-            # X_servo_angle(round(roll))
-            # Y_servo_angle(round(pitch))
 
 
         except KeyboardInterrupt:          
@@ -109,3 +106,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
