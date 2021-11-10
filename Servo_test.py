@@ -43,7 +43,7 @@ def main():
 
             X_servo_angle(90)
             time.sleep(0.3)
-            X_servo_angle(89)
+            X_servo_angle(85)
             time.sleep(0.3)
 
 
