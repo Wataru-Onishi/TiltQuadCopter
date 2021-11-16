@@ -79,21 +79,36 @@ def Y_servo_angle(Y_angle):
     Servo.ChangeDutyCycle(duty)     
 
 
+##########################################################
+#カルマンフィルタ
 
+theta = [0.0,0.0]
+p = [0.0,0.0]
+R = [0.5,0.5]
+Q = [0.0,0.0]
+
+def kalman(num,y):
+    global theta,p 
+    p[num] += Q[num]
+    G = p[num]/(p[num]+R[num])
+    theta[num] += G(y-theta[num])
+    p[num] *= 1-G
 
 #########################################################
 #メイン関数
 def main():
     while True:
         try:
-            ax, ay, az = getAccel()
+            ax,ay,az = getAccel()
 
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
 
-            X_servo_angle(roll)
+            kalman(0,roll)
 
-            print('{:4.3f}, {:4.3f},' .format(roll, pitch))
+            X_servo_angle(theta[0])
+
+            print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
 
 
         except KeyboardInterrupt:          
