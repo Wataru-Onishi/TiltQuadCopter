@@ -97,6 +97,7 @@ def kalman(num,y):
 #########################################################
 #メイン関数
 def main():
+    global theta
     while True:
         try:
             ax,ay,az = getAccel()
