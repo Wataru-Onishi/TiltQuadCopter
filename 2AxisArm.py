@@ -85,7 +85,7 @@ def Y_servo_angle(Y_angle):
 theta = [0.0,0.0]
 p = [0.0,0.0]
 R = [0.5,0.5]
-Q = [0.2,0.2]
+Q = [0.05,0.2]
 
 def kalman(num,y):
     global theta,p 
