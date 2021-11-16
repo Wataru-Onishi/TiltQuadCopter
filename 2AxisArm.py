@@ -106,13 +106,13 @@ def main():
 
             kalman(0,roll)
 
-            X_servo_angle(theta[0])
-            # X_servo_angle(roll)
+            # X_servo_angle(theta[0])
+            X_servo_angle(roll)
 
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
             print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
 
-            time.sleep(0.1)
+            time.sleep(0.01)
 
         except KeyboardInterrupt:          
             Servo.stop()                
