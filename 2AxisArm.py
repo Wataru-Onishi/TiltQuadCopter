@@ -85,7 +85,7 @@ def Y_servo_angle(Y_angle):
 theta = [0.0,0.0]
 p = [0.0,0.0]
 R = [0.5,0.5]
-Q = [0.0,0.0]
+Q = [0.1,0.1]
 
 def kalman(num,y):
     global theta,p 
@@ -97,7 +97,6 @@ def kalman(num,y):
 #########################################################
 #メイン関数
 def main():
-    global theta
     while True:
         try:
             ax,ay,az = getAccel()
