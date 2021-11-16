@@ -112,6 +112,7 @@ def main():
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
             print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
 
+            time.sleep(0.1)
 
         except KeyboardInterrupt:          
             Servo.stop()                
