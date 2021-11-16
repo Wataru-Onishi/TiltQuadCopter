@@ -91,7 +91,7 @@ def kalman(num,y):
     global theta,p 
     p[num] += Q[num]
     G = p[num]/(p[num]+R[num])
-    theta[num] += G(y-theta[num])
+    theta[num] += G*(y-theta[num])
     p[num] *= 1-G
 
 #########################################################
