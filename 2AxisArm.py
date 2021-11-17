@@ -114,7 +114,7 @@ def main():
 
             filename = 'data.txt'
             file = open('data.txt','a')
-            file.writelines(str(theta[0])\n)
+            file.writelines('str(theta[0])\n')
             file.close()
 
             time.sleep(0.01)
