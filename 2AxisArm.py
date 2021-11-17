@@ -112,6 +112,11 @@ def main():
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
             print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
 
+            filename = 'data.txt'
+            file = open('data.txt','a')
+            file.writelines(str(theta[0]))
+            file.close()
+
             time.sleep(0.01)
 
         except KeyboardInterrupt:          
