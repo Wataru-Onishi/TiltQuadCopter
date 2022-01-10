@@ -107,7 +107,7 @@ def main():
             #kalman(1,pitch)
             #X_servo_angle(theta[0])
             #Y_servo_angle(theta[1])            
-            X_servo_angle(roll)
+            #X_servo_angle(roll)
             Y_servo_angle(pitch)
 
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
