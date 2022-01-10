@@ -53,17 +53,17 @@ def getAccel():
 ########################################################
 #サーボモータの設定と関数
 #ポート番号の定義
-#X_Servo_pin = 22                      
+X_Servo_pin = 22                      
 Y_Servo_pin = 24                     
 
 #GPIOの設定
 GPIO.setmode(GPIO.BCM)              
-#GPIO.setup(X_Servo_pin, GPIO.OUT)  
+GPIO.setup(X_Servo_pin, GPIO.OUT)  
 GPIO.setup(Y_Servo_pin, GPIO.OUT)  
 
 #PWMの設定
 #サーボモータSG90の周波数は50[Hz]
-#Servo = GPIO.PWM(X_Servo_pin, 50)    
+Servo = GPIO.PWM(X_Servo_pin, 50)    
 Servo = GPIO.PWM(Y_Servo_pin, 50)     
 
 Servo.start(0)
@@ -107,7 +107,7 @@ def main():
             #kalman(1,pitch)
             #X_servo_angle(theta[0])
             #Y_servo_angle(theta[1])            
-            #X_servo_angle(roll)
+            X_servo_angle(roll)
             Y_servo_angle(pitch)
 
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
