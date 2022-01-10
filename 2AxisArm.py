@@ -105,7 +105,7 @@ def main():
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
 
             kalman(0,roll)
-            kalman(0,pitch)
+            kalman(1,pitch)
             X_servo_angle(theta[0])
             X_servo_angle(theta[1])            
             # X_servo_angle(roll)
