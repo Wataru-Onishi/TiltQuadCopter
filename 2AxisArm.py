@@ -101,7 +101,7 @@ def main():
             ax,ay,az = getAccel()
 
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
-            pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324 +2
+            pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324 +10
 
             kalman(0,roll)
             kalman(1,pitch)
