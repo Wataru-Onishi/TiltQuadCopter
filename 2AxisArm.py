@@ -101,14 +101,14 @@ def main():
             ax,ay,az = getAccel()
 
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
-            pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
+            pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324 +2
 
             kalman(0,roll)
             kalman(1,pitch)
-            #X_servo_angle(theta[0])
-            #Y_servo_angle(theta[1])            
-            X_servo_angle(roll)
-            Y_servo_angle(pitch)
+            X_servo_angle(theta[0])
+            Y_servo_angle(theta[1])            
+            #X_servo_angle(roll)
+            #Y_servo_angle(pitch)
 
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
             #print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
