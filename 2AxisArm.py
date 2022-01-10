@@ -53,8 +53,8 @@ def getAccel():
 ########################################################
 #サーボモータの設定と関数
 #ポート番号の定義
-X_Servo_pin = 23                      
-Y_Servo_pin = 24                     
+X_Servo_pin = 24                      
+Y_Servo_pin = 23                     
 
 #GPIOの設定
 GPIO.setmode(GPIO.BCM)              
