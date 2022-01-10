@@ -67,7 +67,7 @@ Servo = GPIO.PWM(X_Servo_pin, 50)
 Servo = GPIO.PWM(Y_Servo_pin, 50)     
 
 Servo.start(0)                     
-
+Servo.start(0)
 
 def X_servo_angle(X_angle):
     duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
