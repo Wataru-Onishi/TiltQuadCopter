@@ -69,13 +69,13 @@ Servo = GPIO.PWM(Y_Servo_pin, 50)
 Servo.start(0)
 
 def X_servo_angle(X_angle):
-    duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
-    Servo.ChangeDutyCycle(duty)     
+    X_duty = 2.5 + (12.0 - 2.5) * (X_angle + 90) / 180   
+    Servo.ChangeDutyCycle(X_duty)     
   
 
 def Y_servo_angle(Y_angle):
-    duty = 2.5 + (12.0 - 2.5) * (Y_angle + 90) / 180   
-    Servo.ChangeDutyCycle(duty)     
+    Y_duty = 2.5 + (12.0 - 2.5) * (Y_angle + 90) / 180   
+    Servo.ChangeDutyCycle(Y_duty)     
 
 
 ##########################################################
@@ -103,15 +103,15 @@ def main():
             roll = -math.asin(ay/math.sqrt((az**2)+(ay**2))) * 57.324
             pitch = -math.asin(ax/math.sqrt((az**2)+(ax**2))) * 57.324
 
-            kalman(0,roll)
-            kalman(1,pitch)
+            #kalman(0,roll)
+            #kalman(1,pitch)
             #X_servo_angle(theta[0])
             #Y_servo_angle(theta[1])            
             X_servo_angle(roll)
             Y_servo_angle(pitch)
 
             # print('{:4.3f}, {:4.3f},' .format(theta[0], theta[1]))
-            print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
+            #print('{:4.3f}, {:4.3f},' .format(roll, theta[0]))
 #            print('{:4.3f}, {:4.3f},' .format(pitch, theta[1]))
 
             filename = 'data.txt'
